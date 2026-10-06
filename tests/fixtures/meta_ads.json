@@ -1,0 +1,34 @@
+[
+  {
+    "id": "meta_fixture_8928192841",
+    "ad_creation_time": "2026-06-15T08:30:00Z",
+    "ad_delivery_start_time": "2026-06-16T00:00:00Z",
+    "ad_creative_bodies": [
+      "Say goodbye to 3 PM afternoon crashes. Magic Mind gives you 7 hours of smooth, sustained focus with ceremonial matcha and lion's mane. Over 1,000,000 bottles shipped to entrepreneurs."
+    ],
+    "ad_creative_link_titles": [
+      "The World's First Mental Performance Shot | Try Risk-Free"
+    ],
+    "ad_creative_link_captions": ["magicmind.com/trial"],
+    "page_id": "109849284729102",
+    "page_name": "Magic Mind",
+    "publisher_platforms": ["facebook", "instagram"],
+    "target_locations": ["US"]
+  },
+  {
+    "id": "meta_fixture_8928192842",
+    "ad_creation_time": "2026-08-01T12:00:00Z",
+    "ad_delivery_start_time": "2026-08-02T00:00:00Z",
+    "ad_creative_bodies": [
+      "Why neuroscientists avoid sugar-filled energy drinks. See the clinical comparison on adaptogen neurotransmitter support without adenosine crashing."
+    ],
+    "ad_creative_link_titles": [
+      "Clinically Tested Clean Energy Formula"
+    ],
+    "ad_creative_link_captions": ["magicmind.com/neuro-study"],
+    "page_id": "109849284729102",
+    "page_name": "Magic Mind",
+    "publisher_platforms": ["instagram"],
+    "target_locations": ["US"]
+  }
+]

@@ -1,0 +1,6 @@
+node_modules
+.next
+.git
+.adscope_data.json
+tests
+*.log

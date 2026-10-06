@@ -1,0 +1,19 @@
+[
+  {
+    "advertiser_id": "AR_928192849",
+    "ad_id": "google_fixture_492019284",
+    "advertiser_name": "Ketone-IQ (H.V.M.N.)",
+    "format": "responsive_search_ad",
+    "first_shown": "2026-04-10T00:00:00Z",
+    "last_shown": "2026-10-01T00:00:00Z",
+    "headlines": [
+      "Drink Ketones for Clean Brain Fuel",
+      "Developed with US Special Forces"
+    ],
+    "descriptions": [
+      "Ketones are 28% more efficient than glucose. 60-day satisfaction guarantee on first order."
+    ],
+    "destination_url": "https://hvmn.com/products/ketone-iq",
+    "region": "US"
+  }
+]

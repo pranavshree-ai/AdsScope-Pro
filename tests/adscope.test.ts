@@ -64,12 +64,13 @@ describe("AdScope Core Engine Tests", () => {
     it("deduplicates ads with identical external IDs and updates active days", () => {
       const wsId = "ws_test";
       const compId = "cmp_test_01";
+      const testExternalId = `meta_unique_test_${Date.now()}`;
 
       const first = repo.upsertAd({
         workspaceId: wsId,
         competitorId: compId,
         platform: "meta",
-        externalAdId: "meta_unique_test_123",
+        externalAdId: testExternalId,
         advertiserName: "Test Brand",
         firstSeenAt: new Date(Date.now() - 30 * 86400000).toISOString(),
         contentHash: "hash_test_1",
@@ -82,7 +83,7 @@ describe("AdScope Core Engine Tests", () => {
         workspaceId: wsId,
         competitorId: compId,
         platform: "meta",
-        externalAdId: "meta_unique_test_123",
+        externalAdId: testExternalId,
         advertiserName: "Test Brand",
         contentHash: "hash_test_1",
       });

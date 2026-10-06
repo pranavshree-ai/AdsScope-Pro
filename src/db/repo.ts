@@ -525,7 +525,7 @@ class Repository {
         ...prev,
         ...adData,
         lastSeenAt: now.toISOString(),
-        activeDays: diffDays,
+        activeDays: adData.activeDays !== undefined ? adData.activeDays : diffDays,
       };
       this.persist();
       return { ad: this.data.ads[existingIdx], isNew: false };
