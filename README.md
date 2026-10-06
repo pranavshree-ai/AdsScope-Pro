@@ -28,21 +28,55 @@
 
 ---
 
+---
+
+## 🔒 Confidential Data, Security & Secrets Policy
+
+To ensure production security and prevent credential leakage:
+- **`node_modules/` is strictly excluded from Git**: Dependencies are not committed to the repository and are resolved via `npm install` or during Docker image construction.
+- **`.env` and secret files are strictly excluded**: Local environment files containing sensitive API tokens (`.env`, `.env*.local`, `*.pem`, `*.key`) are included in `.gitignore` and **must never be committed to GitHub**.
+- **Template Configuration via `.env.example`**: All required environment variables are documented with safe placeholders in [`.env.example`](.env.example).
+
+### Setting Up Your Environment
+To configure your local environment, copy `.env.example` to `.env`:
+```bash
+cp .env.example .env
+```
+
+### Environment Variables Reference
+
+| Variable | Description | Default / Example | Confidential? |
+|---|---|---|:---:|
+| `NODE_ENV` | Application environment (`development` / `production`) | `development` | No |
+| `DATABASE_URL` | PostgreSQL connection string (supports `pgvector`) | `postgresql://adscope:adscope_secret@localhost:5432/adscope_db` | **Yes (in prod)** |
+| `REDIS_URL` | Redis connection URL for BullMQ queue & worker | `redis://localhost:6379` | **Yes (in prod)** |
+| `AUTH_SECRET` | 32+ character JWT secret for multi-tenant sessions | Auto-generated or custom | **Yes** |
+| `LLM_PROVIDER` | AI Provider (`mock`, `anthropic`, `openai`) | `mock` (zero-cost offline testing) | No |
+| `ANTHROPIC_API_KEY` | Anthropic Claude API key for strategy generation | `sk-ant-...` | **Yes** |
+| `OPENAI_API_KEY` | OpenAI API key for embeddings & fallback | `sk-proj-...` | **Yes** |
+| `STRIPE_SECRET_KEY` | Stripe secret API key for billing & subscriptions | `sk_test_...` | **Yes** |
+| `STRIPE_WEBHOOK_SECRET`| Stripe webhook HMAC signing secret | `whsec_...` | **Yes** |
+| `SENTRY_DSN` | Sentry DSN for application telemetry & exception logging | `https://...@sentry.io/...` | **Yes** |
+| `SLACK_WEBHOOK_URL` | Incoming webhook URL for surveillance alerts | `https://hooks.slack.com/services/...` | **Yes** |
+| `DEFAULT_ALERT_EMAIL` | Destination email for weekly digests & alert notifications | `notifications@adscope.internal` | No |
+
+---
+
 ## Quick Start (Zero-Setup Demo)
 
 AdScope is equipped with a seeded demo dataset and fallback adapters so you can explore the full platform locally without configuring external API keys.
 
 ### 1. Clone & Install Dependencies
 ```bash
-git clone <repository-url>
-cd adscope
+git clone https://github.com/pranavshree-ai/AdsScope-Pro.git
+cd AdsScope-Pro
 npm install
 ```
 
 ### 2. Configure Environment
-Copy `.env.example` to `.env`:
 ```bash
 cp .env.example .env
+# Edit .env with any live API keys if testing live providers
 ```
 
 ### 3. Seed Demo Data

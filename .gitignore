@@ -17,11 +17,17 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# Environment
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+# Environment & Secrets (Confidential - Never commit to VCS)
+.env
+.env*.local
+.env.development
+.env.test
+.env.production
+!.env.example
+*.pem
+*.key
+*.cert
+tsconfig.tsbuildinfo
 
 # Database local storage
 .adscope_data.json
